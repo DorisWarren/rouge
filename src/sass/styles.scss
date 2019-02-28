@@ -1,8 +1,35 @@
-$font-stack: Helvetica, sans-serif;
-$primary-font-color: red;
-
 body {
-  font: 100% $font-stack;
-  color: $primary-font-color;
-  background-color: pink;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100px 1fr;
+  border: 1px solid black;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  grid-area: 1 / 1 / 2 / 4;
+  border: 1px solid black;
+  background-color: red;
+}
+.sidebar {
+  background-color: yellow;
+  display: flex;
+  grid-area: 2 / 1 / 2 / 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.sidebar>ul{
+  list-style: none;
+}
+
+.shopping img {
+  height: 70px;
+  width: 70px;
 }

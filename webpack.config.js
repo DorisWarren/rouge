@@ -24,6 +24,27 @@ module.exports = {
             "css-loader",
             "sass-loader"
         ]
+      },
+
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
+
+      {
+         test: /\.html$/,
+         loader: 'html-srcsets-loader',
+         options: {
+             attrs: ['img:src', ':srcset'],
+         },
       }
 
     ]
@@ -33,8 +54,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: 'body',
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     })
+
   ]
 
 };
