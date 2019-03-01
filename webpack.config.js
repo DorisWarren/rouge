@@ -55,8 +55,17 @@ module.exports = {
       inject: 'body',
       template: './src/index.html',
       filename: 'index.html',
-    })
-
+    }),
+    new HtmlWebpackPlugin({
+    inject: 'body',
+    template: './src/gallery.html',
+    filename: 'gallery.html'
+  }),
+  new HtmlWebpackPlugin({
+    inject: 'body',
+    template: './src/apperal.html',
+    filename: 'apperal.html',
+  }),
   ]
 
 };
